@@ -9,6 +9,14 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' && componentTagger(),
   ].filter(Boolean),
+  css: {
+    postcss: {
+      plugins: {
+        '@tailwindcss/postcss': {},
+        autoprefixer: {},
+      },
+    },
+  },
   root: './kanban-saas-frontend',
   server: {
     host: "::",
