@@ -14,6 +14,14 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  css: {
+    postcss: {
+      plugins: [
+        require('tailwindcss')({ config: './kanban-saas-frontend/tailwind.config.js' }),
+        require('autoprefixer'),
+      ],
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './kanban-saas-frontend/src'),
